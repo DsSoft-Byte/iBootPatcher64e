@@ -20,8 +20,8 @@ img4tool -e --iv <iv> --key <key> -o iBSS.raw iBSS.d38.RELEASE.im4p
 img4tool -e --iv <iv> --key <key> -o iBEC.raw iBEC.d38.RELEASE.im4p
 
 # 2. Patch (interactive — confirms each patch before applying)
-python3 iboot_patcher_dynamic.py iBSS.raw iBSS_patched.raw -b "your boot-args"
-python3 iboot_patcher_dynamic.py iBEC.raw iBEC_patched.raw -b "your boot-args"
+python3 iBootPatcher64e.py iBSS.raw iBSS_patched.raw -b "your boot-args"
+python3 iBootPatcher64e.py iBEC.raw iBEC_patched.raw -b "your boot-args"
 
 # 3. Repackage
 img4tool -c iBSS_patched.im4p -t ibss iBSS_patched.raw
