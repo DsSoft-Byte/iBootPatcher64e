@@ -26,6 +26,12 @@ python3 iBootPatcher64e.py iBEC.raw iBEC_patched.raw -b "your boot-args"
 # 3. Repackage
 img4tool -c iBSS_patched.im4p -t ibss iBSS_patched.raw
 img4tool -c iBEC_patched.im4p -t ibec iBEC_patched.raw
+
+# 4. Build img4 for ramdisk
+img4tool -c iBSS.img4 -p iBSS_patched.im4p -s "blob.shsh2"
+img4tool -c iBEC.img4 -p iBEC_patched.im4p -s "blob.shsh2"
+(blob can be any blob but make sure it matches you ECID, version mismatches do not matter)
+
 ```
 
 Use `-y` to skip confirmation prompts (non-interactive/scripted use).
